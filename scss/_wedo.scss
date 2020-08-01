@@ -1,0 +1,172 @@
+.wedo {
+  background-color: #fff;
+  padding-top: 10rem;
+  padding-bottom: 12rem;
+
+  &__container {
+    margin-top: 9rem;
+    @include flex(stretch, space-between);
+    flex-wrap: wrap;
+  }
+
+  &__img,
+  &__list {
+    width: calc((100% - 3rem) / 2);
+  }
+
+  &__img {
+    object-fit: cover;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    border: 1px solid #eee;
+    padding: 1.5rem;
+    cursor: pointer;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    //font-weight: bold;
+    margin-left: 1.5rem;
+  }
+
+  &__toggle {
+    font-size: 3rem;
+    margin-left: auto;
+    color: $gray-light-color;
+  }
+
+  &__content {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    font-family: $third-font;
+    font-style: italic;
+    color: $gray-light-color;
+    font-weight: 300;
+    line-height: 1.6;
+    border: 1px solid #eeeeee;
+    border-top: none;
+    max-height: 18rem;
+    overflow: auto;
+    display: none;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: $third-color;
+    }
+
+
+  }
+
+  &__item {
+    & + .wedo__item {
+      margin-top: 1.5rem;
+    }
+
+    &.active .wedo__content {
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    &__container {
+      margin-top: 4rem;
+    }
+    &__img,
+    &__list {
+      width: 100%;
+    }
+    &__img {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.quote {
+  padding: 7rem 0;
+  background-color: #eeeeee;
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    @include size(15.5rem);
+    border: 2px solid $third-color;
+    font-size: 4rem;
+    @include flex(center, center);
+    color: $third-color;
+    flex-shrink: 0;
+  }
+
+  &__content {
+    //width: calc(100% - 15.5rem);
+    padding-left: 6rem;
+  }
+
+  &__desc {
+    font-family: $third-font;
+    font-size: 2.5rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.4;
+    color: $gray-light-color;
+    margin-bottom: 2rem;
+  }
+
+  &__author {
+    color: $gray-color;
+    font-size: 2.4rem;
+    font-family: $secondary-font;
+    position: relative;
+    padding-left: 8rem;
+
+    &:before {
+      content: "";
+      position: absolute;
+      background-color: $primary-color;
+      @include size(7rem, 2px);
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+  @media screen and (max-width: 767px) {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    &__icon {
+      @include size(4rem);
+      font-size: 2rem;
+    }
+    &__content {
+      padding-left: 1.5rem;
+    }
+    &__desc {
+      display: -webkit-box;
+      -webkit-line-clamp:3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 1rem;
+    }
+    &__desc,
+    &__author {
+      font-size: 1.5rem;
+    }
+  }
+}
+

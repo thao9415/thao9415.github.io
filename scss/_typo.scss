@@ -1,0 +1,17 @@
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: $primary-font;
+  font-weight: normal;
+  color: $gray-color;
+}
+
+a {
+  text-decoration: none;
+}
+
+.font-script {
+  font-family: $secondary-font;
+}

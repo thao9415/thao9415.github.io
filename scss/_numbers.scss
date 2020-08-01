@@ -1,0 +1,48 @@
+.numbers {
+  background-color: $third-color;
+  max-height: 270rem;
+  &__list {
+    @include flex(stretch);
+    height: 100%;
+  }
+  &__item {
+    width: calc(100%/5);
+    padding: 8rem 2rem;
+    text-align: center;
+    color: white;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    border-left: 1px solid white;
+    &:last-child {
+      border-right: 1px solid white;
+    }
+  }
+
+  &__count {
+    font-weight: bold;
+    font-size: 7.2rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+  }
+  @media screen and (max-width: 1023px){
+
+    &__count {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+    &__list {
+      flex-direction: column;
+
+    }
+    &__item {
+      width: 100%;
+      border-left: 0;
+      padding: 1rem 0;
+      border-bottom: 1px solid white;
+      &:last-child {
+        border-right: none;
+        border-bottom: 0;
+      }
+    }
+  }
+}

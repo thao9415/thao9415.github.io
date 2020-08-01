@@ -1,0 +1,182 @@
+.header {
+  height: 100rem;
+  background-image: linear-gradient(to bottom, rgba($primary-color, 0.9), rgba($secondary-color, 0.9)), url("../images/header-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: white;
+  padding: 2.5rem 0;
+
+  &__top {
+
+    @include flex(baseline, space-between)
+  }
+
+  &__content {
+    text-align: center;
+    max-width: 89rem;
+    margin: 16rem auto 0;
+  }
+
+  &__caption {
+    font-size: 7.2rem;
+    text-transform: capitalize;
+    margin-bottom: 4rem;
+  }
+
+  &__heading {
+    text-transform: uppercase;
+    font-size: 15rem;
+    font-weight: bold;
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      @include size(7.5rem, 4px);
+      background-color: #fff;
+    }
+  }
+
+  &__more {
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: bold;
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    border: 2px solid white;
+  }
+
+  &__container {
+    height: 100%;
+    @include flex(stretch, flex-start, column);
+  }
+
+  @media screen and (max-width: 1023px) {
+    &__caption {
+      font-size: 5rem;
+    }
+    &__heading {
+      font-size: 10rem;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    height: auto;
+    &__caption {
+      font-size: 2.5rem;
+    }
+    &__heading {
+      font-size: 5rem;
+    }
+    &__content {
+      margin-top: 7rem;
+    }
+
+  }
+
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 3rem;
+  color: white;
+  display: inline-block;
+
+  &--gray {
+    color: $gray-light-color;
+  }
+
+  &--big {
+    font-size: 4.6rem;
+  }
+}
+
+
+.header-menu {
+  &__list {
+    @include flex(baseline);
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 3.5rem;
+  }
+
+  &__link {
+    display: inline-block;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid transparent;
+    transition: 0.2s linear;
+
+    &:hover {
+      color: $secondary-color;
+      border-bottom-color: currentColor;
+    }
+  }
+
+  &__icon {
+    color: white;
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+
+}
+
+.header-slider {
+  margin-top: auto;
+  @include flex(center, space-between);
+  color: white;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+
+  &__item {
+    padding-top: 2rem;
+    border-top: 4px solid white;
+    width: calc(25% - 75px / 4);
+
+    &:first-child {
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: -4px;
+        left: 0;
+        @include size(7.5rem, 4px);
+        background-color: $primary-color;
+      }
+    }
+  }
+
+  &__number {
+    font-weight: bold;
+    font-size: 2.4rem;
+  }
+
+  &__text {
+
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-top: 5rem;
+    &__number {
+      font-size: 1.8rem;
+    }
+    &__text {
+      font-size: 1.4rem;
+    }
+  }
+}
+
